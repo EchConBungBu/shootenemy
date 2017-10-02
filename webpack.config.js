@@ -6,7 +6,7 @@ module.exports = {
     filename: './dist/bundle.js'
   },
   resolve: {
-    extensions: ['.ts', '.js', '.tsx', '.jsx']
+    extensions: ['.ts', '.js', '.tsx', '.jsx', '.css']
   },
   module: {
     rules: [
@@ -21,6 +21,10 @@ module.exports = {
         test: /\.tsx?$/,
         include: path.resolve(__dirname, "node_modules/pixi.js"),
         loader: 'ify'
+      },
+      {
+         test: /\.css$/, 
+         loader:  ['style-loader', 'css-loader']
       }
     ]
   },

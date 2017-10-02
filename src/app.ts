@@ -9,7 +9,7 @@ import * as PIXI from 'pixi.js';
 var scenesManager = ScenesManager;
 
 //note the scale parameter is set to true
-scenesManager.create(680, 5000, false);
+scenesManager.create(window.screen.width, window.screen.height, false);
 
 //create a the game scene
 //var bonus = scenesManager.createScene('bonus', BonusScene);

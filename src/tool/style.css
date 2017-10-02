@@ -1,0 +1,20 @@
+body {
+    margin: 0;
+    padding: 0;
+    height:100%;
+    width:100%;
+    cursor:none;
+}
+
+*{
+    margin:0;
+    padding:0;
+    border:0;
+    height:100%;
+    width:100%;
+}
+
+canvas{
+    margin:0;
+    display:block;
+}
