@@ -8,6 +8,7 @@
     "sinon": "github:DefinitelyTyped/DefinitelyTyped/sinon/sinon.d.ts#717a5fdb079f8dd7c19f1b22f7f656dd990f0ccf"
   },
   "globalDevDependencies": {
-    "pixi.js": "registry:dt/pixi.js#4.4.0+20170311014322"
+    "pixi.js": "registry:dt/pixi.js#4.4.0+20170311014322", 
+    "pixi-sound": "registry:dt/pixi-sound#4.4.0+20170311014322"
   }
 }

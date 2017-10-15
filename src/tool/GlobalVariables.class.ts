@@ -1,17 +1,29 @@
 import {Level} from "../model/Level.class";
 import {TextureFiles} from "../model/TextureFiles.class";
+import {CacheIndice} from "../model/CacheIndice.class";
+import {CachePro} from "../model/CachePro.class";
+import {EnemyType} from "../model/EnemyType.class";
 
 export class GlobalVariables {
 	public levels: Array<Level>;
 	public currentLevel: number;
-	public cacheIndices: any;
-	public score: number;
-	public bonuslimit: number;
+	public cacheIndices: CacheIndice;
+	public enemyTypes: Array<EnemyType>
+	public score: number = 0;
+	public bonuslimit: number = 0;
 	public startGameAnimation: boolean;
-	public rotDir: number;
-	public ySpeed:number = 10;
-	public xSpeed:number = 9;
-	public bullets:any;
+	public rotDir: number = 0;
+	public ySpeed: number = 10;
+	public xSpeed: number = 9;
+	public bullets: any = [];
+	public fireballs: any = [];
+	public enemies: any = [];
+	public enemyBlasts: any = [];
+	public shielded: any = false;
+	public dead: any = false;
+	public removed: any = false;
+	public beginning: boolean = false;
+	public paused: boolean = true;
 
 	constructor() {
 		this.currentLevel = 0;
@@ -48,14 +60,24 @@ export class GlobalVariables {
 	        BonusStep: 300
 		})];
 
-		this.cacheIndices= {
-		    explosion: {start: 0, length:25},
-		    fireball: {start:25, length:216}
-		};
+		this.cacheIndices = new CacheIndice({
+			explosion: new CachePro({
+				start: 0,
+                length: 25,
+			}),
+			fireball: new CachePro({
+				start: 25,
+                length: 216,
+			}),
+		});
 
-		this.score = 0;
-		this.bonuslimit = 0;
-		this.bullets = [];
-		this.rotDir = 0;
+		this.enemyTypes = [new EnemyType({
+	        maxInjuries: 1,
+	        scoreFactor: 1
+		}), 
+		new EnemyType({
+	        maxInjuries: 2,
+	        scoreFactor: 1.5
+		})];
 	}
 }
