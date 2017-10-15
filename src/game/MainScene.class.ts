@@ -64,7 +64,7 @@ export class MainScene extends Scene {
 	    }
 	    this.addChild(this.blackOverlay);
 	    this.blackOverlay.alpha = 0.5;
-	    this.addChild(this.soundOn);
+	  //  this.addChild(this.soundOn);
 
     	this.addChild(this.startButton);
      	this.addChild(this.scoreText);
